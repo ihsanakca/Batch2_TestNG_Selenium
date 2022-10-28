@@ -3,6 +3,7 @@ package com.krafttechnologie.tests.Day1_AutomationIntro_FrameworkSetup;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class openBrowser {
 
@@ -12,6 +13,9 @@ public class openBrowser {
         2. WebDriver claasindan driver i hazir hale getirmesini isteyecegiz
         3. driver a testini yapacagimiz web sayfasina bizi gotuemesini isteyecegiz
    */
+
+//        WebDriverManager.firefoxdriver().setup();
+//        WebDriver driver=new FirefoxDriver();
 
 
         WebDriverManager.chromedriver().setup();
@@ -32,5 +36,9 @@ public class openBrowser {
         }else {
             System.out.println("Baslik beklendigi gibi GELMEDI. Dogrulama GECMEDI");
         }
+
+
+
+
     }
 }
