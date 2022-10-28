@@ -1,9 +1,8 @@
-package com.krafttechnologie.tests.Day1_AutomationIntro_FrameworkSetup;
+package com.krafttechnologie.tests.day1_automationIntro_frameworksetup;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class openBrowser {
 

@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Day2_WEbDriver_Basic;
+package com.krafttechnologie.tests.day2_webdriver_basic;
 
 import com.krafttechnologie.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;

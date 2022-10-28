@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Day2_WEbDriver_Basic;
+package com.krafttechnologie.tests.day2_webdriver_basic;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

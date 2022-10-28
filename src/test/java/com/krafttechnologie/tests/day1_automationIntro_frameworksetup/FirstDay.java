@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.Day1_AutomationIntro_FrameworkSetup;
+package com.krafttechnologie.tests.day1_automationIntro_frameworksetup;
 
 public class FirstDay {
 
