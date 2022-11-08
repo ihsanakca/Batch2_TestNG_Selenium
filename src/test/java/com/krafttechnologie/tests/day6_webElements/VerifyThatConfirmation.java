@@ -55,7 +55,5 @@ public class VerifyThatConfirmation {
 
         driver.close();
 
-
-
     }
 }
