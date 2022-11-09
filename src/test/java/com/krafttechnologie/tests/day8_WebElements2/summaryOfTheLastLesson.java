@@ -28,28 +28,34 @@ public class summaryOfTheLastLesson {
     public void test1(){
         Assert.assertTrue(4>2);
     }
+
     @Test
     public void test2(){
         Assert.assertFalse(1>2);
         Assert.assertTrue(3>2);
         Assert.assertFalse(0>2);
     }
+
     @Test
     public void test3(){
         Assert.assertEquals(1,1);
     }
+
     @AfterMethod
     public void afterMethod(){
         System.out.println("After Method runs");
     }
+
     @AfterClass
     public void afterClass(){
         System.out.println("After Class runs");
     }
+
     @AfterTest
     public void afterTest(){
         System.out.println("After Test runs");
     }
+
     @AfterSuite
     public void afterSuit(){
         System.out.println("After Suit runs");
