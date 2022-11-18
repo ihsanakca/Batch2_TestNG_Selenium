@@ -35,7 +35,7 @@ public class SingletonTest {
         WebDriver driver = Driver.get();
         driver.get("https://www.krafttechexlab.com/login");
         Thread.sleep(2000);
-        Driver.closeDriver();
+       // Driver.closeDriver();
     }
 
     @Test
