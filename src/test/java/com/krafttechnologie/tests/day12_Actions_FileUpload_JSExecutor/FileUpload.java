@@ -52,4 +52,40 @@ public class FileUpload {
 
     }
 
+    @Test
+    public void uploadFile2(){
+        /*
+        test folder uzerinde sag clcik Directory sec+ resources sec
+        file copy et resources uzerne uzantisi .txt olacak sekilde paste yap
+        Sonra projenin sistemdeki path ini aliyoruz:
+        String projectPath= System.getProperty("user.dir");
+
+        String FilePath= "src/test/resources/Deneme Text.txt"
+
+         */
+
+        driver.get("https://demoqa.com/upload-download");
+
+        WebElement chooseFile= driver.findElement(By.id("uploadFile"));
+
+        String projectPath= System.getProperty("user.dir");
+        String FilePath= "src/test/resources/Deneme Text.txt";
+
+        String fullPath= projectPath+"/"+FilePath;
+
+        chooseFile.sendKeys(fullPath);
+
+        WebElement testmsj= driver.findElement(By.cssSelector("#uploadedFilePath"));
+
+        System.out.println("testmsj = " + testmsj.getText());
+
+        String actual= testmsj.getText();
+        String expected="Deneme Text.txt";
+
+        Assert.assertTrue(actual.contains(expected));
+
+
+
+    }
+
 }
