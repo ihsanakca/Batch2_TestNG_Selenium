@@ -2,10 +2,7 @@ package com.krafttechnologie.tests.day15_POM;
 
 import com.krafttechnologie.pages.LoginPages;
 import com.krafttechnologie.tests.TestBase;
-import com.krafttechnologie.tests.day14_properties_Singleton.LoginTest;
 import com.krafttechnologie.utilities.ConfigurationReader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -18,7 +15,7 @@ public class NegativeLoginTest extends TestBase {
 
         driver.get(ConfigurationReader.get("url"));
 
-        loginPages.userNameInput_loc.sendKeys(ConfigurationReader.get("username"));
+        loginPages.userEmailInput_loc.sendKeys(ConfigurationReader.get("userEmail"));
         loginPages.passwordInput_loc.sendKeys("somepassword");
         loginPages.submitButton_loc.click();
 
@@ -44,7 +41,7 @@ public class NegativeLoginTest extends TestBase {
     public void wrongUsername() {
 
         driver.get(ConfigurationReader.get("url"));
-        loginPages.userNameInput_loc.sendKeys("xyzw");
+        loginPages.userEmailInput_loc.sendKeys("xyzw");
         loginPages.passwordInput_loc.sendKeys(ConfigurationReader.get("password"));
         loginPages.submitButton_loc.click();
 
