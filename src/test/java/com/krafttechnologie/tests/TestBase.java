@@ -27,17 +27,19 @@ public class TestBase {
     protected ExtentTest extentLogger;
 
     @BeforeTest
-    public void setUpTest(){
+    public void setUpTest() {
 
         //initialize the class
-        report =new ExtentReports();
+        report = new ExtentReports();
 
         //create a report path
-        String projectPath=System.getProperty("user.dir");
-        String reportPath=projectPath + "/test-output/report.html";
+        String projectPath = System.getProperty("user.dir");
+        String reportPath = projectPath + "/test-output/report.html";
+        //String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        //String reportPath=projectPath + "/test-output/report"+date+".html";
 
         //initialize the html report with the reportPath
-        htmlReporter=new ExtentHtmlReporter(reportPath);
+        htmlReporter = new ExtentHtmlReporter(reportPath);
 
         //attach the html report to the report object
         report.attachReporter(htmlReporter);
@@ -46,7 +48,7 @@ public class TestBase {
         htmlReporter.config().setReportName("KraftTechB2 Smoke Test");
 
         //set environment information
-        report.setSystemInfo("Environment","Production");
+        report.setSystemInfo("Environment", "Production");
         report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
         report.setSystemInfo("OS", System.getProperty("os.name"));
         report.setSystemInfo("Test Engineer", "Fatih");
@@ -54,10 +56,9 @@ public class TestBase {
     }
 
     @AfterTest
-    public void tearDownTest(){
+    public void tearDownTest() {
         report.flush();
     }
-
 
 
     @BeforeMethod
@@ -66,21 +67,21 @@ public class TestBase {
         driver = Driver.get();
         driver.get(ConfigurationReader.get("url"));
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait=new WebDriverWait(Driver.get(),15);
+        wait = new WebDriverWait(Driver.get(), 15);
         driver.manage().window().maximize();
-        actions=new Actions(driver);
+        actions = new Actions(driver);
 
     }
 
     @AfterMethod
     public void tearDown(ITestResult result) throws InterruptedException, IOException {
         //If Test Fails
-        if (result.getStatus()==ITestResult.FAILURE){
+        if (result.getStatus() == ITestResult.FAILURE) {
 
             //Record the name of failed test
             extentLogger.fail(result.getName());
             //Take the screenshot and return the location of screenshot
-            String screenShotPath= BrowserUtils.getScreenshot(result.getName());
+            String screenShotPath = BrowserUtils.getScreenshot(result.getName());
             //Add the screenshot to the report
             extentLogger.addScreenCaptureFromPath(screenShotPath);
             //Capture the exception and put inside the report
@@ -89,7 +90,8 @@ public class TestBase {
         }
 
         Thread.sleep(2000);
-        driver.close();
+        //driver.close();
+        Driver.closeDriver();
 
     }
 

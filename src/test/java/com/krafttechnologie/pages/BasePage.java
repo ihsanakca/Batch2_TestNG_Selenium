@@ -17,7 +17,7 @@ public abstract class BasePage {
 
     public void navigateToModule(String tab, String module){
 
-        String tabLocator= "//span[.='"+tab+"']";
+        String tabLocator= "//li[@class='nav-item']//span[.='"+tab+"']";  ////li[@class='nav-item']//span[.='Components']
 
         String moduleLocator="//span[.='"+module+"']";
 
@@ -33,6 +33,15 @@ public abstract class BasePage {
 
     }
 
+
+    public void navigateToModule(String menuName){
+        Driver.get().findElement(By.xpath("//li[@class='nav-item']//span[.='"+menuName+"']")).click();
+
+
+
+    }
+
+
     public String subTitle(String subTitle){
 
         String subTileLocator="//h1[.='"+subTitle+"']";
@@ -44,6 +53,10 @@ public abstract class BasePage {
         String actualSubTitle= SubTile.getText();
         return actualSubTitle;
 
+    }
+
+    public String getAccountName_mtd(String accountName){
+        return Driver.get().findElement(By.xpath("//span[.='"+accountName+"']")).getText();
     }
 
 
