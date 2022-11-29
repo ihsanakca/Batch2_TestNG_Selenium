@@ -11,6 +11,7 @@ import org.testng.Assert;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -74,16 +75,16 @@ public class BrowserUtils {
      * @param list of webelements
      * @return list of string
      */
-//    public static List<String> getElementsText(List<WebElement> list) {
-////        List<String> elemTexts = new ArrayList<String>();
-//        List<String> elemTexts = new ArrayList<>();
-//
-//
-//        for (WebElement el : list) {
-//            elemTexts.add(el.getText());
-//        }
-//        return elemTexts;
-//    }
+    public static List<String> getElementsText(List<WebElement> list) {
+//        List<String> elemTexts = new ArrayList<String>();
+        List<String> elemTexts = new ArrayList<>();
+
+
+        for (WebElement el : list) {
+            elemTexts.add(el.getText());
+        }
+        return elemTexts;
+    }
 
     /**
      * Extracts text from list of elements matching the provided locator into new List<String>
@@ -91,16 +92,16 @@ public class BrowserUtils {
      * @param locator
      * @return list of strings
      */
-//    public static List<String> getElementsText(By locator) {
-//
-//        List<WebElement> elems = Driver.get().findElements(locator);
-//        List<String> elemTexts = new ArrayList<>();
-//
-//        for (WebElement el : elems) {
-//            elemTexts.add(el.getText());
-//        }
-//        return elemTexts;
-//    }
+    public static List<String> getElementsText(By locator) {
+
+        List<WebElement> elems = Driver.get().findElements(locator);
+        List<String> elemTexts = new ArrayList<>();
+
+        for (WebElement el : elems) {
+            elemTexts.add(el.getText());
+        }
+        return elemTexts;
+    }
 
     /**
      * Performs a pause

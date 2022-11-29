@@ -40,6 +40,10 @@ public class DashboardPage extends BasePage {
         public WebElement moduleLocator;
 
 
+        @FindBy(xpath = "//a[@class='nav-link nav-profile d-flex align-items-center pe-0']")
+        public WebElement getUserName;
+
+
 
        public String DashboardPageTitle(String title){
 
@@ -59,4 +63,13 @@ public class DashboardPage extends BasePage {
 
                 return actualName;
         }
+
+        public String getUserName(){
+
+           BrowserUtils.waitForVisibility(getUserName,5);
+
+           return getUserName.getText();
+        }
+
+
 }

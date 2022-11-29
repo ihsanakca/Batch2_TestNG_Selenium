@@ -1,4 +1,4 @@
-package com.krafttechnologie.tests.day3_basic_locators;
+package com.krafttechnologie.tests.day11_Waits.day3_basic_locators;
 
 import com.github.javafaker.Faker;
 import com.krafttechnologie.utilities.WebDriverFactory;
