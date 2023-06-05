@@ -58,6 +58,7 @@ public class TestBase {
     @AfterTest
     public void tearDownTest() {
         report.flush();
+        Driver.closeDriver();
     }
 
 
@@ -91,7 +92,7 @@ public class TestBase {
 
         Thread.sleep(2000);
         //driver.close();
-        Driver.closeDriver();
+       // Driver.closeDriver();
 
     }
 

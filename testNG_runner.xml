@@ -3,6 +3,9 @@
 <!-- How to run all tests cases in one class without one -->
 <suite name="Krafttech Automation" verbose="10">
     <test name="Krafttech Smoke Test">
+        <packages>
+            <package name="com.krafttechnologie.tests.day15_POM"></package>
+        </packages>
       <classes>
           <class name="com.krafttechnologie.tests.day18_ExtentReports.PositiveTest">
             <methods>
